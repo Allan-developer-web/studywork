@@ -65,7 +65,7 @@ function Home() {
           <div className="items">
             <div className="item">
               <img
-                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
+                src=""
                 alt=""
               />
               <div className="line"></div>
@@ -151,7 +151,7 @@ function Home() {
         <div className="container">
           <div className="item">
             <h1>
-              fiverr <i>business</i>
+              Studywork <i>business</i>
             </h1>
             <h1>
               A business solution designed for <i>teams</i>
@@ -174,7 +174,7 @@ function Home() {
               <img src="./img/check.png" alt="" />
               Manage teamwork and boost productivity with one powerful workspace
             </div>
-            <button>Explore Fiverr Business</button>
+            <button>Explore Studywork Business</button>
           </div>
           <div className="item">
             <img

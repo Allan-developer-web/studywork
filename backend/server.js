@@ -24,7 +24,13 @@ const connect = async () => {
   }
 };
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+// Allow CORS from frontend dev servers (reflect origin in dev)
+const isProd = process.env.NODE_ENV === "production";
+if (isProd) {
+  app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+} else {
+  app.use(cors({ origin: true, credentials: true }));
+}
 app.use(express.json());
 app.use(cookieParser());
 
@@ -39,6 +45,7 @@ app.use("/api/reviews", reviewRoute);
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
+  console.error("[server error]", err.stack || err);
 
   return res.status(errorStatus).send(errorMessage);
 });

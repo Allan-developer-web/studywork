@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
   try {
+    console.log("[auth.register] incoming body:", req.body);
     const hash = bcrypt.hashSync(req.body.password, 5);
     const newUser = new User({
       ...req.body,
@@ -14,6 +15,7 @@ export const register = async (req, res, next) => {
     await newUser.save();
     res.status(201).send("User has been created.");
   } catch (err) {
+    console.error("[auth.register] error:", err);
     next(err);
   }
 };
@@ -36,23 +38,26 @@ export const login = async (req, res, next) => {
     );
 
     const { password, ...info } = user._doc;
-    res
-      .cookie("accessToken", token, {
-        httpOnly: true,
-      })
-      .status(200)
-      .send(info);
+
+    const isProd = process.env.NODE_ENV === "production";
+    const cookieOptions = {
+      httpOnly: true,
+      sameSite: isProd ? "none" : "lax",
+      secure: isProd,
+    };
+
+    res.cookie("accessToken", token, cookieOptions).status(200).send(info);
   } catch (err) {
     next(err);
   }
 };
 
 export const logout = async (req, res) => {
-  res
-    .clearCookie("accessToken", {
-      sameSite: "none",
-      secure: true,
-    })
-    .status(200)
-    .send("User has been logged out.");
+  const isProd = process.env.NODE_ENV === "production";
+  const cookieOptions = {
+    sameSite: isProd ? "none" : "lax",
+    secure: isProd,
+  };
+
+  res.clearCookie("accessToken", cookieOptions).status(200).send("User has been logged out.");
 };

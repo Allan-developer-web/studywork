@@ -34,7 +34,7 @@
     }
 
     p {
-      color: #111;
+      color: var(--text-color);
     }
 
     .star {
@@ -55,9 +55,9 @@
     }
   }
 
-  hr {
+    hr {
     height: 0;
-    border: 0.5px solid rgb(228, 228, 228);
+    border: 0.5px solid rgba(0,0,0,0.06);
   }
 
   .detail {
@@ -73,14 +73,14 @@
       object-fit: cover;
     }
 
-    .price {
+      .price {
       span {
-        color: #999;
+        color: rgba(31,41,55,0.45);
         font-size: 12px;
       }
 
       h2 {
-        color: #555;
+        color: var(--text-color);
         font-size: 18px;
         font-weight: 400;
         text-align: end;

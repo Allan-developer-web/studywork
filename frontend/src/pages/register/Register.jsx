@@ -6,12 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
     img: "",
     country: "",
+    phone: "",
     isSeller: false,
     desc: "",
   });
@@ -31,16 +34,25 @@ function Register() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
-    const url = await upload(file);
     try {
+      let url = user.img;
+      if (file) {
+        url = await upload(file);
+      }
+      
       await newRequest.post("/auth/register", {
         ...user,
         img: url,
       });
-      navigate("/")
+      navigate("/login");
     } catch (err) {
       console.log(err);
+      setError(err.response?.data || "An error occurred during registration");
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -48,12 +60,14 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
+          {error && <div className="error">{error}</div>}
           <label htmlFor="">Username</label>
           <input
             name="username"
             type="text"
             placeholder="johndoe"
             onChange={handleChange}
+            required
           />
           <label htmlFor="">Email</label>
           <input
@@ -61,9 +75,10 @@ function Register() {
             type="email"
             placeholder="email"
             onChange={handleChange}
+            required
           />
           <label htmlFor="">Password</label>
-          <input name="password" type="password" onChange={handleChange} />
+          <input name="password" type="password" onChange={handleChange} required />
           <label htmlFor="">Profile Picture</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
           <label htmlFor="">Country</label>
@@ -72,8 +87,11 @@ function Register() {
             type="text"
             placeholder="Usa"
             onChange={handleChange}
+            required
           />
-          <button type="submit">Register</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Registering..." : "Register"}
+          </button>
         </div>
         <div className="right">
           <h1>I want to become a seller</h1>

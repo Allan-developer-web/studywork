@@ -27,7 +27,8 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await newRequest.post("/auth/logout");
-      localStorage.setItem("currentUser", null);
+      localStorage.removeItem("currentUser");
+      setOpen(false);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -70,9 +71,9 @@ function Navbar() {
                   <Link className="link" to="/messages">
                     Messages
                   </Link>
-                  <Link className="link" onClick={handleLogout}>
+                  <span className="link logout" onClick={handleLogout} role="button" tabIndex={0}>
                     Logout
-                  </Link>
+                  </span>
                 </div>
               )}
             </div>
