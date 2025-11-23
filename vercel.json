@@ -2,7 +2,7 @@
   "projectSettings": {
     "rootDirectory": "frontend"
   },
-  "buildCommand": "npm run build",
-  "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": "dist"
+  "installCommand": "npm run install-root",
+  "buildCommand": "npm run build-root",
+  "outputDirectory": "frontend/dist"
 }

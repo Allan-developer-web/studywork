@@ -1,0 +1,10 @@
+{
+  "name": "studywork-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "install-root": "cd frontend && npm install --legacy-peer-deps",
+    "build-root": "cd frontend && npm run build",
+    "dev-root": "cd frontend && npm run dev"
+  }
+}
