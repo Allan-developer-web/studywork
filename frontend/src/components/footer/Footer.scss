@@ -11,7 +11,7 @@
 
   .container {
     width: 1400px;
-    .top {
+      .top {
       display: flex;
       justify-content: space-between;
       .item {
@@ -22,8 +22,11 @@
           font-size: 16px;
           color: rgba(31,41,55,0.8);
         }
-        span {
+        .link {
           font-weight: 300;
+          display: block;
+          padding: 4px 0;
+          color: inherit;
         }
       }
     }

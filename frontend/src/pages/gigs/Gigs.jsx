@@ -13,19 +13,29 @@ function Gigs() {
 
   const { search } = useLocation();
 
+  const buildUrl = () => {
+    const min = minRef.current?.value || "";
+    const max = maxRef.current?.value || "";
+    // start with /gigs then append search (which includes ? if present)
+    let url = "/gigs";
+    if (search) url += search;
+    // determine separator: if search present and contains ?, use & otherwise use ?
+    const sep = url.includes("?") ? "&" : "?";
+    url += `${sep}sort=${encodeURIComponent(sort)}`;
+    if (min) url += `&min=${encodeURIComponent(min)}`;
+    if (max) url += `&max=${encodeURIComponent(max)}`;
+    return url;
+  };
+
   const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["gigs"],
+    queryKey: ["gigs", search, sort, minRef.current?.value, maxRef.current?.value],
     queryFn: () =>
-      newRequest
-        .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
-        )
-        .then((res) => {
-          return res.data;
-        }),
+      newRequest.get(buildUrl()).then((res) => {
+        return res.data;
+      }),
   });
 
-  console.log(data);
+  console.log("Gigs data:", data);
 
   const reSort = (type) => {
     setSort(type);

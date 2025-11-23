@@ -91,33 +91,33 @@ function Navbar() {
         <>
           <hr />
           <div className="menu">
-            <Link className="link menuLink" to="/">
-              Graphics & Design
-            </Link>
-            <Link className="link menuLink" to="/">
-              Video & Animation
-            </Link>
-            <Link className="link menuLink" to="/">
-              Writing & Translation
-            </Link>
-            <Link className="link menuLink" to="/">
-              AI Services
-            </Link>
-            <Link className="link menuLink" to="/">
-              Digital Marketing
-            </Link>
-            <Link className="link menuLink" to="/">
-              Music & Audio
-            </Link>
-            <Link className="link menuLink" to="/">
-              Programming & Tech
-            </Link>
-            <Link className="link menuLink" to="/">
-              Business
-            </Link>
-            <Link className="link menuLink" to="/">
-              Lifestyle
-            </Link>
+              <Link className="link menuLink" to="/gigs?cat=graphics">
+                Graphics &amp; Design
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=video-animation">
+                Video &amp; Animation
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=writing-translation">
+                Writing &amp; Translation
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=ai-services">
+                AI Services
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=digital-marketing">
+                Digital Marketing
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=music-audio">
+                Music &amp; Audio
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=programming-tech">
+                Programming &amp; Tech
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=business">
+                Business
+              </Link>
+              <Link className="link menuLink" to="/gigs?cat=lifestyle">
+                Lifestyle
+              </Link>
           </div>
           <hr />
         </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 function Footer() {
@@ -9,59 +10,59 @@ function Footer() {
         <div className="top">
           <div className="item">
             <h2>Categories</h2>
-            <span>Graphics & Design</span>
-            <span>Digital Marketing</span>
-            <span>Writing & Translation</span>
-            <span>Video & Animation</span>
-            <span>Music & Audio</span>
-            <span>Programming & Tech</span>
-            <span>Data</span>
-            <span>Business</span>
-            <span>Lifestyle</span>
-            <span>Photography</span>
-            <span>Sitemap</span>
+            <Link className="link" to="/gigs?cat=graphics">Graphics &amp; Design</Link>
+            <Link className="link" to="/gigs?cat=digital-marketing">Digital Marketing</Link>
+            <Link className="link" to="/gigs?cat=writing-translation">Writing &amp; Translation</Link>
+            <Link className="link" to="/gigs?cat=video-animation">Video &amp; Animation</Link>
+            <Link className="link" to="/gigs?cat=music-audio">Music &amp; Audio</Link>
+            <Link className="link" to="/gigs?cat=programming-tech">Programming &amp; Tech</Link>
+            <Link className="link" to="/gigs?cat=data">Data</Link>
+            <Link className="link" to="/gigs?cat=business">Business</Link>
+            <Link className="link" to="/gigs?cat=lifestyle">Lifestyle</Link>
+            <Link className="link" to="/gigs?cat=photography">Photography</Link>
+            <Link className="link" to="/sitemap">Sitemap</Link>
           </div>
           <div className="item">
             <h2>About</h2>
-            <span>Press & News</span>
-            <span>Partnerships</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span>
-            <span>Contact Sales</span>
+            <Link className="link" to="/press">Press &amp; News</Link>
+            <Link className="link" to="/partnerships">Partnerships</Link>
+            <Link className="link" to="/privacy">Privacy Policy</Link>
+            <Link className="link" to="/terms">Terms of Service</Link>
+            <Link className="link" to="/ip-claims">Intellectual Property Claims</Link>
+            <Link className="link" to="/investors">Investor Relations</Link>
+            <Link className="link" to="/contact">Contact Sales</Link>
           </div>
           <div className="item">
             <h2>Support</h2>
-            <span>Help & Support</span>
-            <span>Trust & Safety</span>
-            <span>Selling on Studywork</span>
-            <span>Buying on Studywork</span>
+            <Link className="link" to="/help">Help &amp; Support</Link>
+            <Link className="link" to="/trust">Trust &amp; Safety</Link>
+            <Link className="link" to="/selling">Selling on Studywork</Link>
+            <Link className="link" to="/buying">Buying on Studywork</Link>
           </div>
           <div className="item">
             <h2>Community</h2>
-            <span>Customer Success Stories</span>
-            <span>Community hub</span>
-            <span>Forum</span>
-            <span>Events</span>
-            <span>Blog</span>
-            <span>Influencers</span>
-            <span>Affiliates</span>
-            <span>Podcast</span>
-            <span>Invite a Friend</span>
-            <span>Become a Seller</span>
-            <span>Community Standards</span>
+            <Link className="link" to="/stories">Customer Success Stories</Link>
+            <Link className="link" to="/community">Community hub</Link>
+            <Link className="link" to="/forum">Forum</Link>
+            <Link className="link" to="/events">Events</Link>
+            <Link className="link" to="/blog">Blog</Link>
+            <Link className="link" to="/influencers">Influencers</Link>
+            <Link className="link" to="/affiliates">Affiliates</Link>
+            <Link className="link" to="/podcast">Podcast</Link>
+            <Link className="link" to="/invite">Invite a Friend</Link>
+            <Link className="link" to="/become-seller">Become a Seller</Link>
+            <Link className="link" to="/community-standards">Community Standards</Link>
           </div>
           <div className="item">
             <h2>More From Studywork</h2>
-            <span>Business</span>
-            <span>Pro</span>
-            <span>Logo Maker</span>
-            <span>Studywork Guides</span>
-            <span>ClearVoice</span>
-            <span>Workspace</span>
-            <span>Learn</span>
-            <span>Working Not Working</span>
+            <Link className="link" to="/business">Business</Link>
+            <Link className="link" to="/pro">Pro</Link>
+            <Link className="link" to="/logo-maker">Logo Maker</Link>
+            <Link className="link" to="/guides">Studywork Guides</Link>
+            <Link className="link" to="/clearvoice">ClearVoice</Link>
+            <Link className="link" to="/workspace">Workspace</Link>
+            <Link className="link" to="/learn">Learn</Link>
+            <Link className="link" to="/working-not-working">Working Not Working</Link>
           </div>
         </div>
         <hr />

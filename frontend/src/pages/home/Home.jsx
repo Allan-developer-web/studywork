@@ -3,6 +3,7 @@ import "./Home.scss";
 import Featured from "../../components/featured/Featured";
 import TrustedBy from "../../components/trustedBy/TrustedBy";
 import Slide from "../../components/slide/Slide";
+import { Link } from "react-router-dom";
 import CatCard from "../../components/catCard/CatCard";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { cards, projects } from "../../data";
@@ -63,87 +64,84 @@ function Home() {
         <div className="container">
           <h1>Explore the marketplace</h1>
           <div className="items">
-            <div className="item">
-              <img
-                src=""
-                alt=""
-              />
+            <Link to={`/gigs?cat=graphics`} className="item">
+              <img src="./img/graphics.svg" alt="Graphics & Design" />
               <div className="line"></div>
-              <span>Graphics & Design</span>
-            </div>
-            <div className="item">
+              <span>Graphics &amp; Design</span>
+            </Link>
+            <Link to={`/gigs?cat=digital-marketing`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
-                alt=""
+                alt="Digital Marketing"
               />
               <div className="line"></div>
 
               <span>Digital Marketing</span>
-            </div>
-            <div className="item">
+            </Link>
+            <Link to={`/gigs?cat=writing-translation`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
-                alt=""
+                alt="Writing & Translation"
               />
               <div className="line"></div>
-              <span>Writing & Translation</span>
-            </div>
-            <div className="item">
+              <span>Writing &amp; Translation</span>
+            </Link>
+            <Link to={`/gigs?cat=video-animation`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
-                alt=""
+                alt="Video & Animation"
               />
               <div className="line"></div>
-              <span>Video & Animation</span>
-            </div>
-            <div className="item">
+              <span>Video &amp; Animation</span>
+            </Link>
+            <Link to={`/gigs?cat=music-audio`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
-                alt=""
+                alt="Music & Audio"
               />
               <div className="line"></div>
-              <span>Music & Audio</span>
-            </div>
-            <div className="item">
+              <span>Music &amp; Audio</span>
+            </Link>
+            <Link to={`/gigs?cat=programming-tech`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
-                alt=""
+                alt="Programming & Tech"
               />
               <div className="line"></div>
-              <span>Programming & Tech</span>
-            </div>
-            <div className="item">
+              <span>Programming &amp; Tech</span>
+            </Link>
+            <Link to={`/gigs?cat=business`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
-                alt=""
+                alt="Business"
               />
               <div className="line"></div>
               <span>Business</span>
-            </div>
-            <div className="item">
+            </Link>
+            <Link to={`/gigs?cat=lifestyle`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
-                alt=""
+                alt="Lifestyle"
               />
               <div className="line"></div>
               <span>Lifestyle</span>
-            </div>
-            <div className="item">
+            </Link>
+            <Link to={`/gigs?cat=data`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
-                alt=""
+                alt="Data"
               />
               <div className="line"></div>
               <span>Data</span>
-            </div>
-            <div className="item">
+            </Link>
+            <Link to={`/gigs?cat=photography`} className="item">
               <img
                 src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
-                alt=""
+                alt="Photography"
               />
               <div className="line"></div>
               <span>Photography</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

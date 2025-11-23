@@ -34,62 +34,70 @@ function App() {
     );
   };
 
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Layout />,
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+          {
+            path: "/gigs",
+            element: <Gigs />,
+          },
+          {
+            path: "/mygigs",
+            element: <MyGigs />,
+          },
+          {
+            path: "/orders",
+            element: <Orders />,
+          },
+          {
+            path: "/messages",
+            element: <Messages />,
+          },
+          {
+            path: "/message/:id",
+            element: <Message />,
+          },
+          {
+            path: "/add",
+            element: <Add />,
+          },
+          {
+            path: "/gig/:id",
+            element: <Gig />,
+          },
+          {
+            path: "/register",
+            element: <Register />,
+          },
+          {
+            path: "/login",
+            element: <Login />,
+          },
+          {
+            path: "/pay/:id",
+            element: <Pay />,
+          },
+          {
+            path: "/success",
+            element: <Success />,
+          },
+        ],
+      },
+    ],
     {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/gigs",
-          element: <Gigs />,
-        },
-        {
-          path: "/mygigs",
-          element: <MyGigs />,
-        },
-        {
-          path: "/orders",
-          element: <Orders />,
-        },
-        {
-          path: "/messages",
-          element: <Messages />,
-        },
-        {
-          path: "/message/:id",
-          element: <Message />,
-        },
-        {
-          path: "/add",
-          element: <Add />,
-        },
-        {
-          path: "/gig/:id",
-          element: <Gig />,
-        },
-        {
-          path: "/register",
-          element: <Register />,
-        },
-        {
-          path: "/login",
-          element: <Login />,
-        },
-        {
-          path: "/pay/:id",
-          element: <Pay />,
-        },
-        {
-          path: "/success",
-          element: <Success />,
-        },
-      ],
-    },
-  ]);
+      // opt-in to the v7 startTransition future to silence the migration warning
+      future: {
+        v7_startTransition: true,
+      },
+    }
+  );
 
   return <RouterProvider router={router} />;
 }
